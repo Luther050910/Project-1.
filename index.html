@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rindu's Educational Video</title>
+    <link href="https://fonts.googleapis.com/css?family=Libre+Baskerville&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="index.css">
+</head>
+<body>
+    <nav class="top-banner">
+        <a href="#" class="nav-link" onclick="showSection('home'); return false;">Home</a>
+        <a href="#" class="nav-link" onclick="showSection('video'); return false;">Video</a>
+        <a href="#more-info" class="nav-link" onclick="showSection('more-info');">More Info</a>
+        <img src="https://i.pinimg.com/1200x/3c/95/cc/3c95ccd6d0403fbc5d6f52036bb31074.jpg" alt="Stamp Icon" class="banner-icon">
+    </nav>
+
+    <div id="home" class="content-section active">
+        <h1> Welcome to Rindu's Educational Website!</h1>
+        <p>This is the home section. Click the video or more Info button to see more.</p>
+    </div>
+
+    <div id="video" class="content-section">
+        <h2>Educational Video</h2>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+            title="Youtube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+    </div>
+
+    <div id="more-info" class="content-section">
+        <h2>More Info</h2>
+        <p>The video shows a quick tutorial on how to make tipat. <br>
+        The only thing you will be needing to make tipat nasi is a young coconut leaf.
+        </p>
+        <img src="https://ecs7.tokopedia.net/img/cache/700/product-1/2018/6/6/1746190/1746190_5f60c2e7-97ce-4c2f-a31a-adb2be16a7b3_1080_759.jpg" alt="Young Coconut Leaf" style="margin-top:20px;max-width:300px;border-radius:10px;">
+    </div>
+
+    <script>
+        function showSection(sectionId) {
+            document.querySelectorAll('.content-section').forEach(function(sec) {
+                sec.classList.remove('active');
+            });
+            document.getElementById(sectionId).classList.add('active');
+            if(sectionId === 'more-info') {
+                document.getElementById('more-info').scrollIntoView({behavior:'smooth' });
+            }
+        }
+    </script>
+    <style>
+        .content-section {display: none; text-align: center; margin-top: 40px; position: relative; z-index: 1; }
+        .active {display: block; }
+        #more-info { margin-top: 100px; }
+        #home, #video, #more-info { color: rgba(255, 255, 255, 0.76); }
+    </style>
+</body>
+</html>
